@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Placement Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Placement Prediction</h1>
+
+    <p>Enter your details to predict placement chances.</p>
+
+    <form action="/predict" method="POST">
+
+        <label>CGPA</label>
+        <input type="number" name="cgpa" step="0.1" min="0" max="10" required>
+
+        <label>IQ</label>
+        <input type="number" name="iq" required>
+
+        <button type="submit">Predict Placement</button>
+
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            {{ prediction }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
